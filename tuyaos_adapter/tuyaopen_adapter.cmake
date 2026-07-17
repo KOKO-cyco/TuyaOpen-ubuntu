@@ -72,6 +72,7 @@ include_directories(
     ${CMAKE_CURRENT_LIST_DIR}/include/uart
     ${CMAKE_CURRENT_LIST_DIR}/include/utilities/include
     ${CMAKE_CURRENT_LIST_DIR}/include/watchdog
+    ${CMAKE_CURRENT_LIST_DIR}/include/tuyaopen
 )
 
 # camera files (V4L2)
@@ -199,6 +200,9 @@ if(CONFIG_ENABLE_BLUETOOTH)
     list(APPEND SOURCES ${BT_SRC})
     include_directories(${BT_INC})
 endif()
+
+# tuyaopen
+list(APPEND SOURCES "${CMAKE_CURRENT_LIST_DIR}/tuyaopen/tuyaopen_license.c")
 
 # audio files
 if(CONFIG_ENABLE_AUDIO)
